@@ -1,5 +1,3 @@
-import com.gradle.enterprise.gradleplugin.GradleEnterpriseExtension
-
 subprojects {
     apply(plugin = "java-library")
 
@@ -9,7 +7,8 @@ subprojects {
         jcenter()
     }
 
-    val java = extensions.getByType(JavaPluginExtension::class.java)
-    java.sourceCompatibility = JavaVersion.VERSION_11
-    java.targetCompatibility = JavaVersion.VERSION_11
+    extensions.configure(JavaPluginExtension::class) {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
 }

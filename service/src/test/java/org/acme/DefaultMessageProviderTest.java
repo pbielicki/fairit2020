@@ -12,6 +12,7 @@ public class DefaultMessageProviderTest {
 
     @Test
     public void shouldGetTheMessage() {
+        var x = 123;
         assertThat(provider.message(), is("Hello World!"));
     }
 
