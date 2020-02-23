@@ -6,18 +6,20 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class MainTest {
+public class MessageTest {
 
-    private Main main = new Main();
+    private Message message = new Message();
 
     @Test
     public void shouldGetTheMessage() {
-        assertThat(main.message(), is("Hello World!"));
+        var x = 123;
+        assertThat(x, is(123));
+        assertThat(message.message(), is("Hello World!"));
     }
 
     @Test
     @Ignore
     public void shouldGetTheWrongMessage() {
-        assertThat(main.message(), is("Hello Girls!"));
+        assertThat(message.message(), is("Hello Girls!"));
     }
 }
