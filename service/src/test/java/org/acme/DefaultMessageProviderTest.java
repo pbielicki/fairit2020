@@ -1,10 +1,10 @@
 package org.acme;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class DefaultMessageProviderTest {
 
@@ -12,12 +12,12 @@ public class DefaultMessageProviderTest {
 
     @Test
     public void shouldGetTheMessage() {
-        var x = 123;
-        assertThat(provider.message(), is("Hello World!"));
+        var message = provider.message();
+        assertThat(message, is("Hello World!"));
     }
 
     @Test
-    @Ignore
+    @Disabled
     public void shouldGetTheWrongMessage() {
         assertThat(provider.message(), is("Hello Girls!"));
     }
